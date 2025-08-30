@@ -1,0 +1,4 @@
+Step 1: move to the folder that contains the node_modules
+        using cd (change director)
+        drag the folders the terminal and press enter
+Step 2: run - npm run dev (node package manager)

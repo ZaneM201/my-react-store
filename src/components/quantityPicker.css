@@ -1,0 +1,259 @@
+/* Enhanced Dark Quantity Picker Styles */
+.quantity-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.quantity-picker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+}
+
+.quantity-picker:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.quantity-picker button {
+  background: var(--bg-tertiary);
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.375rem;
+  font-weight: 600;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.quantity-picker button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.quantity-picker button span {
+  position: relative;
+  z-index: 1;
+}
+
+.quantity-picker button:hover:not(:disabled) {
+  color: var(--text-light);
+  transform: scale(1.05);
+  box-shadow: inset 0 0 0 2px var(--primary-color);
+}
+
+.quantity-picker button:hover:not(:disabled)::before {
+  opacity: 1;
+}
+
+.quantity-picker button:disabled {
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+.quantity-picker button:disabled:hover {
+  box-shadow: none;
+}
+
+.quantity-picker button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  z-index: 2;
+  position: relative;
+}
+
+.quantity-picker button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.quantity-picker label {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.125rem;
+  min-width: 60px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  user-select: none;
+  position: relative;
+  transition: var(--transition);
+}
+
+.quantity-picker:hover label {
+  background: var(--bg-hover);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Enhanced button content */
+.quantity-picker button:first-child::after {
+  content: '−';
+  position: absolute;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.quantity-picker button:last-child::after {
+  content: '+';
+  position: absolute;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Alternative rounded style */
+.quantity-picker.rounded {
+  border-radius: 22px;
+}
+
+.quantity-picker.rounded button:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.quantity-picker.rounded button:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
+/* Alternative compact style */
+.quantity-picker.compact {
+  transform: scale(0.9);
+}
+
+.quantity-picker.compact button {
+  width: 36px;
+  height: 36px;
+  font-size: 1.125rem;
+}
+
+.quantity-picker.compact label {
+  min-width: 48px;
+  height: 36px;
+  font-size: 1rem;
+}
+
+/* Enhanced glow variant */
+.quantity-picker.glow {
+  box-shadow: 
+    var(--shadow),
+    0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.quantity-picker.glow:hover {
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  .quantity-picker {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .quantity-picker button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  
+  .quantity-picker label {
+    min-width: 64px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+  
+  .quantity-picker:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .quantity-picker button {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .quantity-picker label {
+    min-width: 68px;
+    height: 52px;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .quantity-picker {
+    margin: 1rem auto 0;
+  }
+  
+  .quantity-picker button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+  
+  .quantity-picker label {
+    min-width: 56px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quantity-picker button {
+    width: 44px;
+    height: 44px;
+    font-size: 1.125rem;
+  }
+  
+  .quantity-picker label {
+    min-width: 60px;
+    height: 44px;
+  }
+  
+  .quantity-picker:hover {
+    transform: none;
+  }
+  
+  .quantity-picker button:hover:not(:disabled) {
+    transform: none;
+  }
+  
+  .quantity-picker button:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+}
