@@ -106,7 +106,7 @@
   }
   
   .catalog-card {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr, minmax(280px, 1fr));
     gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
