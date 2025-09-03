@@ -41,7 +41,7 @@ function Catalog(){
     }
 
     return(
-        <div className="catalog">
+        <div className="catalog-card">
             <h2>Catalog Page</h2>
             <h3>Hello we have {productsGlobal.length} new products</h3>
             <button onClick={clearFilter} className="btn btn-info m1">All</button>
