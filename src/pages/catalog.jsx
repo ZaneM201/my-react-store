@@ -1,5 +1,5 @@
 import Products from "../components/products";
-import "./catalog.css"
+import "./catalog.css";
 import { useEffect, useState } from "react";
 import DataService from "../dataService/data";
 

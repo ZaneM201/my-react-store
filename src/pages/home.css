@@ -1,0 +1,15 @@
+
+.home{
+    min-height: 400px;
+    background-color: #1e293b;
+}
+
+.home h1{
+    color: #f8fafc;
+}
+
+.home .top-img{
+   width: 95%;
+   margin: 20px;
+   padding: 6px; 
+}
