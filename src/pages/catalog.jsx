@@ -1,5 +1,5 @@
-import Products from "../components/products";
 import "./catalog.css";
+import Products from "../components/products";
 import { useEffect, useState } from "react";
 import DataService from "../dataService/data";
 
@@ -42,7 +42,7 @@ function Catalog(){
 
     return(
         <div className="catalog-card">
-            <h2>Catalog Page</h2>
+            <h2>Our Catalog</h2>
             <h3>Hello we have {productsGlobal.length} new products</h3>
             <button onClick={clearFilter} className="btn btn-info m1">All</button>
             {categories.map(catTemp => <button onClick={()=> filter(catTemp)} key={catTemp} className="btn btn-info m-1">{catTemp}</button>)}

@@ -1,0 +1,10 @@
+
+.admin h1{
+    text-align: center;
+}
+
+.admin-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
