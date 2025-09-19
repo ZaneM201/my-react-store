@@ -2,10 +2,12 @@ import { useState } from 'react'
 import "./couponsForm.css";
 
 function CouponsForm(){
+    const [allCoupons, setAllCoupons] = useState([]);
     const [coupon, setCoupons] = useState({
         code: '',
         discount: ''
     });
+    const [showError, setShowError] = useState(false);
     
     function handleInput(e){
         let text = e.target.value;
@@ -22,11 +24,30 @@ function CouponsForm(){
 
     function save(){
         console.log(coupon);
+
+        if(!coupon.discount || !coupon.code){
+            setShowError(true);
+            return;
+        }else{
+            setShowError(false);
+        }
+
+        let copy = [...allCoupons];
+        copy.push(coupon);
+        setAllCoupons(copy);
     }
 
     return(
         <div className="coupons-form">
             <h3>Add Coupon Code</h3>
+
+            {
+                showError ?
+                    <div className='error'>
+                        ** Invalid data, please verify. **
+                    </div>
+                : null
+            }
 
             <div>
                 <label className="form-label">Code</label>
@@ -39,6 +60,10 @@ function CouponsForm(){
             <div className="controls">
                 <button onClick={save} className="btn-save">Save Coupon</button>
             </div>
+
+            <ul className='coupon-list'>
+                {allCoupons.map(cpn => <li>{cpn.code} - {cpn.discount}%</li>)}
+            </ul>
         </div>
     );
 }

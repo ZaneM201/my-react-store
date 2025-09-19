@@ -1,0 +1,115 @@
+/* Dark Todo Page Styles */
+.todo {
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #3b82f6, #f59e0b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.todo h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6, #f59e0b);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.todo > div {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+}
+
+.todo > div > div {
+  margin-bottom: 1.5rem;
+}
+
+.todo > div > div:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  color: #f8fafc;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.form-control {
+  background: #1e293b;
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 8px;
+  color: #f8fafc;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: #334155;
+}
+
+.btn-save {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: #f8fafc;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 40%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .todo { padding: 2rem 1rem; }
+  .todo h1 { font-size: 2.25rem; margin-bottom: 2rem; }
+  .todo h1::after { width: 80px; }
+  .todo > div { padding: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .todo h1 { font-size: 1.875rem; }
+  .todo h1::after { width: 60px; height: 3px; }
+  .todo > div { padding: 1.5rem; }
+}
