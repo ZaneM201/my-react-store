@@ -62,7 +62,7 @@ function CouponsForm(){
             </div>
 
             <ul className='coupon-list'>
-                {allCoupons.map(cpn => <li>{cpn.code} - {cpn.discount}%</li>)}
+                {allCoupons.map(cpn => <li key={cpn.code}>{cpn.code} - {cpn.discount}%</li>)}
             </ul>
         </div>
     );

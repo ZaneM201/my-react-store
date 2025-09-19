@@ -37,7 +37,7 @@ function Todo(){
                     <button onClick={save} className="btn-save">Save Todo</button>
                 </div>
                 <ul className='list'>
-                    {allTodos.map(todo => <li>{todo.text}</li>)}
+                    {allTodos.map(todo => <li key={todo.text}>{todo.text}</li>)}
                 </ul>
             </div>
         </div>

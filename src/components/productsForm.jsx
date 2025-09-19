@@ -54,7 +54,7 @@ function ProductsForm(){
                 <button onClick={save} className="btn-save">Add Product</button>
             </div>
             <ul className='product-list'>
-                {allProducts.map(prod => <li> {prod.title} - ${prod.price} - {prod.image} -  {prod.category}</li>)}
+                {allProducts.map(prod => <li key={prod.title}> {prod.title} - ${prod.price} - {prod.image} -  {prod.category}</li>)}
             </ul>
         </div>
     );
