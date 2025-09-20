@@ -10,7 +10,7 @@ var products = [
         id:2,//id is unique
         title:"Smart TV",
         price: 600,
-        image:"Smart TV.jpeg",
+        image:"Smart-TV.jpeg",
         category:"smart tv",
     },
     {
