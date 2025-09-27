@@ -41,13 +41,21 @@ function Catalog(){
     }
 
     return(
-        <div className="catalog-card">
-            <h2>Our Catalog</h2>
-            <h3>Hello we have {productsGlobal.length} new products</h3>
-            <button onClick={clearFilter} className="btn btn-info m1">All</button>
-            {categories.map(catTemp => <button onClick={()=> filter(catTemp)} key={catTemp} className="btn btn-info m-1">{catTemp}</button>)}
-            {productsToDisplay.map(temporal => <Products dataProps={temporal} key={temporal.id}/>)}
+        <div className="catalog">
+        <h2>Our Catalog</h2>
+        <h3>Hello we have {productsGlobal.length} new products</h3>
+        
+        <div className="filter-buttons">
+          <button onClick={clearFilter} className="btn btn-primary">All</button>
+          {categories.map(catTemp => <button onClick={() => filter(catTemp)} key={catTemp} className="btn btn-secondary">{catTemp}</button>)}
         </div>
+        
+        <div className="catalog-card">
+          {productsToDisplay.map(temporal => 
+            <Products dataProps={temporal} key={temporal.id} />
+          )}
+        </div>
+      </div>
     )
 }
 export default Catalog;

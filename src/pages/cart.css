@@ -1,5 +1,18 @@
 
 
+
+.cart h1{
+    text-align: center;
+}
+
+.cart .parent {
+    display: flex;
+}
+
+.cart .price {
+    color: green;
+}
+
 .cart .list {
     list-style: none;
     flex: 1;

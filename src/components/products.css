@@ -16,8 +16,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .product-card::before {
@@ -40,7 +38,12 @@
 }
 
 .product-card h2 {
+  /* Explicitly override the gradient text properties */
   background: var(--gradient-primary);
+  background-clip: initial !important; /* Override the text clipping */
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  
   color: var(--text-light);
   padding: 1rem 0.75rem;
   margin: 0;
@@ -55,6 +58,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  
+  /* Additional properties to ensure crisp text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .product-card h2::after {

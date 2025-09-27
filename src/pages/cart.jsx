@@ -18,9 +18,9 @@ function Cart(){
                         <li className='prod-cart'>
                             <img src={"/images/" + prod.image} />
                             <h4>{prod.title}</h4>
-                            <label>${prod.price}</label>
+                            <label className='price'>${prod.price}</label>
                             <label>Qty: {prod.quantity}</label>
-                            <label>Total: ${prod.price * prod.quantity}</label>
+                            <label className='price'>Total: ${prod.price * prod.quantity}</label>
                             <button className='btn btn-remove'>Remove</button>
 
                         </li>)}
@@ -30,7 +30,7 @@ function Cart(){
                     <h3>Total</h3>
                     <h2>$9,999.99</h2>
 
-                    <button className='btn btn-pay'>Pay Now</button>
+                    <button className='btn btn-pay'>Checkout</button>
                 </div>
             </div>
         </div>
